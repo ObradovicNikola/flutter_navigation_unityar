@@ -11,7 +11,7 @@ class UnityDemoScreen extends StatefulWidget {
 class _UnityDemoScreenState extends State<UnityDemoScreen> {
   static final GlobalKey<ScaffoldState> _scaffoldKey =
       GlobalKey<ScaffoldState>();
-  // UnityWidgetController _unityWidgetController;
+  late UnityWidgetController _unityWidgetController;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +29,7 @@ class _UnityDemoScreenState extends State<UnityDemoScreen> {
             color: Colors.yellow,
             child: UnityWidget(
               onUnityCreated: onUnityCreated,
+              fullscreen: false,
             ),
           ),
         ),
@@ -38,6 +39,6 @@ class _UnityDemoScreenState extends State<UnityDemoScreen> {
 
   // Callback that connects the created controller to the unity controller
   void onUnityCreated(controller) {
-    // this._unityWidgetController = controller;
+    this._unityWidgetController = controller;
   }
 }
